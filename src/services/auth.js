@@ -1,6 +1,6 @@
 const userSchema = require("../models/User");
 const { getUserByEmail, isPasswordMatch } = require("./userService");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const login = async (payload) => {
   const user = await getUserByEmail(payload.email);
