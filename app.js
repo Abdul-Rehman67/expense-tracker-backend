@@ -17,6 +17,12 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Hello expense tracker!')
 })
+app.get('/users', async(req, res) => {
+  let result =await  User.find()
+  console.log("result",result)
+  res.send(result)
+  
+})
 
 app.use('/auth',authRoute)
 app.use('/transaction',transaction)
