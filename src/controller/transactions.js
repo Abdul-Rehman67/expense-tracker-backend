@@ -10,7 +10,6 @@ const createTransactionController = async (req, res) => {
   const userEmail = req.email;
   let payload = req.body;
   payload = { transactionDetails: payload, userEmail: userEmail };
-  console.log(payload);
   let result = await createTransaction(payload);
   if (result) {
     return res.send(response(true, "Created Successfully", {}));
